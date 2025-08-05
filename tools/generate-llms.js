@@ -120,11 +120,16 @@ function generateFallbackUrl(fileName) {
 }
 
 function generateLlmsTxt(pages) {
-  const sortedPages = pages.sort((a, b) => a.title.localeCompare(b.title));
+  const sortedPages = pages.sort((a, b) => {
+    const titleA = a.title || '';
+    const titleB = b.title || '';
+    return titleA.localeCompare(titleB);
+  });
+
   const pageEntries = sortedPages.map(page =>
-    `- [(${page.url}): ${page.description}`
+    `- [(${page.url}): ${page.description}]`
   ).join('\n');
-  
+
   return `## Pages\n${pageEntries}`;
 }
 
@@ -165,7 +170,6 @@ function main() {
       process.exit(1);
     }
   }
-
 
   const llmsTxtContent = generateLlmsTxt(pages);
   const outputPath = path.join(process.cwd(), 'public', 'llms.txt');

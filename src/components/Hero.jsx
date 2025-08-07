@@ -25,15 +25,15 @@ const Hero = () => {
     });
   };
   return (
-    <section className="hero-bg min-h-screen flex items-center justify-center relative">
-      <div className="container mx-auto px-4 text-center relative z-10">
+    <section className="hero-bg min-h-screen flex items-center justify-center relative ">
+      <div className="container mx-auto  px-10 text-center relative z-10">
         <motion.div className="max-w-4xl mx-auto">
           <div className="mt-8">
             <DropdownMenu />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-            <span>{typedText}</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight h-32  text-white">
+            <span className="">{typedText}</span>
             <span className="animate-pulse">|</span>
           </h1>
 
@@ -106,7 +106,7 @@ const Hero = () => {
             }}
             className="mt-12 flex justify-center items-center gap-5 text-gray-400"
           >
-            <div className="text-center  text-white text-2xl ">
+            <div className="text-center gi text-white text-2xl ">
               +
               <CountUp
                 from={0}

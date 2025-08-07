@@ -50,6 +50,43 @@ const Testimonials = () => {
       rating: 5,
       avatar: "Professional lawyer in suit with law books background",
     },
+    // NUEVOS TESTIMONIOS
+    {
+      name: "Sofía Ledesma",
+      company: "SofTrends.ar",
+      text: "Confié en Code M para hacer mi tienda online y fue lo mejor que pude hacer. El diseño quedó hermoso y fácil de usar. Desde que lancé la web, las ventas subieron un montón.",
+      rating: 5,
+      avatar: "Young Argentine woman with long hair and stylish outfit",
+    },
+    {
+      name: "Mariano Toledo",
+      company: "Toledo Arquitectura",
+      text: "Necesitaba un sitio institucional para mostrar mis trabajos y que la gente me contacte más fácil. Me encantó cómo quedó, todo limpio, profesional y rápido de navegar.",
+      rating: 5,
+      avatar: "Argentine male architect with glasses and blueprints",
+    },
+    {
+      name: "Luciana Moyano",
+      company: "Sabores del Alma",
+      text: "No tenía idea de cómo arrancar con una página para vender. Me armaron una tienda con todo listo, y me acompañaron en cada paso. ¡Gente que realmente quiere ayudarte!",
+      rating: 5,
+      avatar:
+        "Argentine woman entrepreneur with food jars or kitchen background",
+    },
+    {
+      name: "Rodrigo Méndez",
+      company: "Punto Legal SRL",
+      text: "Contratamos a Code M para rediseñar nuestra página institucional. Cumplieron los plazos, el diseño quedó impecable, y ahora nuestra imagen online es mucho más profesional.",
+      rating: 5,
+      avatar: "Middle-aged Argentine businessman in suit, smiling",
+    },
+    {
+      name: "Clara Fernández",
+      company: "Freelance Marketing",
+      text: "Trabajo con muchos diseñadores web, pero Code M se destacó por la atención al detalle. Armamos una landing page que funcionó espectacular.",
+      rating: 5,
+      avatar: "Young Argentine woman with laptop in modern workspace",
+    },
   ];
 
   return (
@@ -129,7 +166,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-indigo-900/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div className="bg-indigo-900/10 backdrop-blur-sm rounded-2xl p-8 border border-indigo-500/60">
             <h3 className="text-2xl font-bold text-white mb-4">
               ¿Listo para ser el próximo caso de éxito?
             </h3>

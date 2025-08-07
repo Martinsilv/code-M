@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Zap, Star } from "lucide-react";
+import {
+  ArrowRight,
+  Code,
+  Zap,
+  Star,
+  Barcode,
+  KeyIcon,
+  KeyboardIcon,
+  LucideFileKey,
+  PencilLine,
+  LineChart,
+  ArrowUpToLine,
+  LucideSend,
+  LucideLineChart,
+} from "lucide-react";
 import { DropdownMenu } from "./DropdownMenu";
 import CountUp from "../components/ui/countUp";
 const Hero = () => {
@@ -32,9 +46,9 @@ const Hero = () => {
             <DropdownMenu />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight h-32  text-white">
-            <span className="">{typedText}</span>
-            <span className="animate-pulse">|</span>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 -mt-6 leading-tight h-32  text-white">
+            <span>{typedText}</span>
+            <span className="pulse-bar ">|</span>
           </h1>
 
           <motion.p
@@ -71,7 +85,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-2xl shadow-indigo-500/20 transform hover:scale-105 transition-all duration-300"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 text-lg h-14 font-semibold rounded-full shadow-2xl shadow-indigo-500/20 transform hover:scale-105 transition-all duration-300"
               onClick={scrollToContact}
             >
               Comenzar mi proyecto
@@ -104,7 +118,7 @@ const Hero = () => {
               delay: 1,
               duration: 0.5,
             }}
-            className="mt-12 flex justify-center items-center gap-5 text-gray-400"
+            className="mt-5 md:mt-12  flex justify-center items-center gap-5 text-gray-400"
           >
             <div className="text-center gi text-white text-2xl ">
               +
@@ -113,7 +127,7 @@ const Hero = () => {
                 to={"45"}
                 separator=","
                 direction="up"
-                duration={3}
+                duration={2}
                 className="count-up-text text-2xl font-semibold text-white"
               />
               <div className="text-sm text-gray-400">Proyectos completados</div>

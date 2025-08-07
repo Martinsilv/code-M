@@ -27,20 +27,7 @@ const Hero = () => {
   return (
     <section className="hero-bg min-h-screen flex items-center justify-center relative">
       <div className="container mx-auto px-4 text-center relative z-10">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 50,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          className="max-w-4xl mx-auto"
-        >
+        <motion.div className="max-w-4xl mx-auto">
           <div className="mt-8">
             <DropdownMenu />
           </div>
@@ -63,20 +50,8 @@ const Hero = () => {
             }}
             className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto"
           >
-            Transformo ideas en experiencias digitales extraordinarias. Hago
-            crecer tu negocio
-            <span className="font-semibold text-gray-100">
-              Landing pages efectivas
-            </span>
-            ,
-            <span className="font-semibold text-gray-100">
-              sitios web institucionales
-            </span>
-            y
-            <span className="font-semibold text-gray-100">
-              tiendas e-commerce modernas
-            </span>
-            , que impulsan tu presencia digital.
+            Transformo ideas en experiencias digitales extraordinarias para
+            hacer crecer tu negocio
           </motion.p>
 
           <motion.div
@@ -126,12 +101,12 @@ const Hero = () => {
               opacity: 1,
             }}
             transition={{
-              delay: 2,
-              duration: 0.8,
+              delay: 1,
+              duration: 0.5,
             }}
-            className="mt-12 flex justify-center items-center gap-8 text-gray-400"
+            className="mt-12 flex justify-center items-center gap-5 text-gray-400"
           >
-            <div className="text-center text-white text-2xl font-bold">
+            <div className="text-center  text-white text-2xl ">
               +
               <CountUp
                 from={0}
@@ -139,18 +114,46 @@ const Hero = () => {
                 separator=","
                 direction="up"
                 duration={3}
-                className="count-up-text text-2xl font-bold text-white"
+                className="count-up-text text-2xl font-semibold text-white"
               />
               <div className="text-sm text-gray-400">Proyectos completados</div>
             </div>
             <div className="w-px h-12 bg-white/20"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">100%</div>
+            <div className="text-center ">
+              <div className="text-2xl font-bold  text-white">
+                %
+                <CountUp
+                  from={0}
+                  to={"100"}
+                  separator=","
+                  direction="up"
+                  duration={2}
+                  className="count-up-text text-2xl font-bold text-white"
+                />
+              </div>
               <div className="text-sm text-gray-400">Clientes satisfechos</div>
             </div>
             <div className="w-px h-12 bg-white/20"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">24/7</div>
+              <div className="text-2xl font-bold  text-white">
+                <CountUp
+                  from={0}
+                  to={"24"}
+                  separator=","
+                  direction="up"
+                  duration={2}
+                  className="count-up-text text-2xl font-bold text-white"
+                />
+                /
+                <CountUp
+                  from={0}
+                  to={"7"}
+                  separator=","
+                  direction="up"
+                  duration={4}
+                  className="count-up-text text-2xl font-bold text-white"
+                />
+              </div>
               <div className="text-sm">Soporte técnico</div>
             </div>
           </motion.div>

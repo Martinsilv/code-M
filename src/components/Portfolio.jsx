@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ExternalLink, Eye, Code } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import imgSakura from "./assets/sakuramarket1.png";
 
 const Portfolio = () => {
   const sectionRef = useScrollReveal();
@@ -11,12 +12,14 @@ const Portfolio = () => {
 
   const portfolioItems = [
     {
-      title: "E-commerce Fashion Store",
+      title: "E-commerce Sakura market",
       category: "Tienda Online",
       description:
-        "Tienda online moderna para marca de moda con carrito de compras y pasarela de pago integrada.",
-      image: "Modern e-commerce website for fashion brand with shopping cart",
-      tech: ["React", "Node.js", "Stripe", "MongoDB"],
+        "Tienda online de productos importados con carrito de compras, animaciones personalizadas",
+      image: { src: imgSakura, alt: "E-commerce Sakura market" },
+      tech: ["React", "Firebase", "TailwindCSS", "JavaScript"],
+      repo: "https://github.com/Martinsilv/sakuraMarket",
+      site: "https://mrsakura-market.com/",
     },
     {
       title: "Restaurante Gourmet",
@@ -25,7 +28,7 @@ const Portfolio = () => {
         "Sitio web elegante para restaurante con menú digital y sistema de reservas online.",
       image:
         "Elegant restaurant website with digital menu and reservation system",
-      tech: ["Vue.js", "Firebase", "CSS3", "JavaScript"],
+      tech: ["React", "Firebase", "TailwindCSS", "JavaScript"],
     },
     {
       title: "Landing Page SaaS",
@@ -97,9 +100,9 @@ const Portfolio = () => {
           {portfolioItems.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="portfolio-item relative rounded-xl overflow-hidden glass-effect border border-white/10 group"
             >
@@ -107,28 +110,62 @@ const Portfolio = () => {
                 <img
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   alt={`${item.title} - ${item.category}`}
-                  src="https://images.unsplash.com/photo-1595872018818-97555653a011"
+                  src={item.image.src || item.image}
                 />
 
                 <div className="portfolio-overlay">
                   <div className="text-center">
-                    <Button
-                      size="sm"
-                      className="bg-white/10 hover:bg-white/20 text-white border border-white/20 mb-2"
-                      onClick={handleViewProject}
-                    >
-                      <Eye className="w-4 h-4 mr-2" />
-                      Ver proyecto
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="bg-transparent border-white/20 text-white hover:bg-white/10"
-                      onClick={handleViewProject}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Sitio web
-                    </Button>
+                    {item.repo ? (
+                      <a
+                        href={item.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          size="sm"
+                          className="bg-white/10 hover:bg-white/20 text-white border border-white/20 mb-2"
+                        >
+                          <Eye className="w-4 h-4 mr-2" />
+                          Ver proyecto
+                        </Button>
+                      </a>
+                    ) : (
+                      <Button
+                        size="sm"
+                        className="bg-white/10 hover:bg-white/20 text-white border border-white/20 mb-2"
+                        onClick={handleViewProject}
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        Ver proyecto
+                      </Button>
+                    )}
+
+                    {item.site ? (
+                      <a
+                        href={item.site}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="bg-transparent border-white/20 text-white hover:bg-white/10"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Sitio web
+                        </Button>
+                      </a>
+                    ) : (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="bg-transparent border-white/20 text-white hover:bg-white/10"
+                        onClick={handleViewProject}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Sitio web
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

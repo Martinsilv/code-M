@@ -5,12 +5,11 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build"
-
-,
+		"build": "vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@number-flow/react": "^0.5.10",
 		"@radix-ui/react-alert-dialog": "^1.0.5",
 		"@radix-ui/react-avatar": "^1.0.3",
 		"@radix-ui/react-checkbox": "^1.0.4",

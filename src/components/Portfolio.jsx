@@ -5,6 +5,11 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ExternalLink, Eye, Code } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import imgSakura from "./assets/sakuramarket1.png";
+import imgEstetica from "./assets/estetica-libertad.png";
+import imgGym from "./assets/gym-libertad.png";
+import imgMenu from "./assets/burguerMenu.png";
+import imgPresupuestos from "./assets/presupuesto.png";
+import imgAdmin from "./assets/admin.png";
 
 const Portfolio = () => {
   const sectionRef = useScrollReveal();
@@ -18,52 +23,57 @@ const Portfolio = () => {
         "Tienda online de productos importados con carrito de compras, animaciones personalizadas",
       image: { src: imgSakura, alt: "E-commerce Sakura market" },
       tech: ["React", "Firebase", "TailwindCSS", "JavaScript"],
-      repo: "https://github.com/Martinsilv/sakuraMarket",
       site: "https://mrsakura-market.com/",
     },
     {
-      title: "Restaurante Gourmet",
-      category: "Sitio Institucional",
-      description:
-        "Sitio web elegante para restaurante con menú digital y sistema de reservas online.",
-      image:
-        "Elegant restaurant website with digital menu and reservation system",
-      tech: ["React", "Firebase", "TailwindCSS", "JavaScript"],
-    },
-    {
-      title: "Landing Page SaaS",
+      title: "Estetica Libertad",
       category: "Landing Page",
       description:
-        "Landing page de alta conversión para startup tecnológica con formularios optimizados.",
-      image:
-        "High-conversion landing page for tech startup with optimized forms",
-      tech: ["React", "TailwindCSS", "Framer Motion", "Analytics"],
+        "Sitio web elegante para estética con menú digital con animaciones y facil contacto.",
+      image: { src: imgEstetica, alt: "Estetica Libertad" },
+      tech: ["React", "TailwindCSS", "JavaScript"],
+
+      site: "https://estetica-libertad.vercel.app/",
     },
     {
-      title: "Clínica Médica",
-      category: "Sitio Institucional",
-      description:
-        "Portal web profesional para clínica médica con sistema de citas y información de servicios.",
-      image: "Professional medical clinic website with appointment system",
-      tech: ["WordPress", "PHP", "MySQL", "Bootstrap"],
-    },
-    {
-      title: "Tienda de Electrónicos",
-      category: "E-commerce",
-      description:
-        "Plataforma e-commerce completa para venta de productos electrónicos con comparador de precios.",
-      image:
-        "Complete e-commerce platform for electronics with price comparison",
-      tech: ["Shopify", "Liquid", "JavaScript", "API Integration"],
-    },
-    {
-      title: "Agencia de Marketing",
+      title: "Gym Libertad",
       category: "Landing Page",
       description:
-        "Landing page dinámica para agencia de marketing digital con portfolio interactivo.",
-      image:
-        "Dynamic landing page for digital marketing agency with interactive portfolio",
-      tech: ["Next.js", "GSAP", "Styled Components", "CMS"],
+        "Landing page para gimnasio con animaciones y formulario de contacto.",
+      image: { src: imgGym, alt: "Gym Libertad" },
+      tech: ["React", "JavaScript", "TailwindCSS", "CSS", "Framer Motion"],
+      site: "https://gym-libertad.vercel.app/",
+    },
+    {
+      title: "Menu Digital Hamburgueseria",
+      category: "pagina estática",
+      description: "Un menu digital e interactivo para hamburguesería.",
+      image: { src: imgMenu, alt: "Menu Digital Hamburgueseria" },
+      tech: ["React", "JavaScript", "TailwindCSS", "CSS", "Framer Motion"],
+      site: "https://burguer-menu-chi.vercel.app/",
+    },
+    {
+      title: "Aplicación web de presupuestos",
+      category: "Aplicación Web",
+      description:
+        "Aplicación web para generar y gestionar presupuestos de manera eficiente.",
+      image: {
+        src: imgPresupuestos,
+        alt: "Aplicación web de presupuestos",
+      },
+      tech: ["React", "JavaScript", "TailwindCSS", "CSS"],
+      site: "https://app-presupuestos-one.vercel.app/",
+    },
+    {
+      title: "Control de Productos - Sakura Admin",
+      category: "aplicación web",
+      description:
+        "Aplicación web para la gestión de productos con un panel de administración para cargar productos y gestionar inventario.",
+      image: {
+        src: imgAdmin,
+        alt: "inventario",
+      },
+      tech: ["React", "JavaScript", "TailwindCSS", "CSS", "Firebase"],
     },
   ];
 
@@ -115,31 +125,6 @@ const Portfolio = () => {
 
                 <div className="portfolio-overlay">
                   <div className="text-center">
-                    {item.repo ? (
-                      <a
-                        href={item.repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button
-                          size="sm"
-                          className="bg-white/10 hover:bg-white/20 text-white border border-white/20 mb-2"
-                        >
-                          <Eye className="w-4 h-4 mr-2" />
-                          Ver proyecto
-                        </Button>
-                      </a>
-                    ) : (
-                      <Button
-                        size="sm"
-                        className="bg-white/10 hover:bg-white/20 text-white border border-white/20 mb-2"
-                        onClick={handleViewProject}
-                      >
-                        <Eye className="w-4 h-4 mr-2" />
-                        Ver proyecto
-                      </Button>
-                    )}
-
                     {item.site ? (
                       <a
                         href={item.site}

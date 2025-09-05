@@ -1,21 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Code,
-  Zap,
-  Star,
-  Barcode,
-  KeyIcon,
-  KeyboardIcon,
-  LucideFileKey,
-  PencilLine,
-  LineChart,
-  ArrowUpToLine,
-  LucideSend,
-  LucideLineChart,
-} from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import { DropdownMenu } from "./DropdownMenu";
 import CountUp from "../components/ui/countUp";
 const Hero = () => {

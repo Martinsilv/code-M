@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const sectionRef = useScrollReveal();
@@ -18,6 +19,7 @@ const Contact = () => {
     service: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -26,7 +28,7 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
@@ -38,38 +40,67 @@ const Contact = () => {
       return;
     }
 
-    toast({
-      title: "¡Mensaje enviado con éxito! ✨",
-      description:
-        "Te contactaré dentro de las próximas 24 horas. ¡Gracias por confiar en Code M!",
-    });
+    setIsSubmitting(true);
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    });
+    try {
+      // Configurar EmailJS con tus credenciales
+      const result = await emailjs.send(
+        "service_lbji7re", // Reemplaza con tu Service ID
+        "template_unrrq9g", // Reemplaza con tu Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+          to_name: "Code M", // Tu nombre o el de tu empresa
+        },
+        "9kQ-UbE1ydNBQ05nu" // Reemplaza con tu Public Key
+      );
+
+      toast({
+        title: "¡Mensaje enviado con éxito! ✨",
+        description:
+          "Te contactaré dentro de las próximas 24 horas. ¡Gracias por confiar en Code M!",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error al enviar el email:", error);
+      toast({
+        title: "Error al enviar el mensaje",
+        description:
+          "Hubo un problema al enviar tu mensaje. Por favor intenta nuevamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      info: "hola@codem.dev",
+      info: "martinsilva510@gmil.com",
       action: "mailto:hola@codem.dev",
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Teléfono",
-      info: "+1 (555) 123-4567",
-      action: "tel:+15551234567",
+      info: "+54 9 3794-003399",
+      action: "tel:+5493794003399",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Ubicación",
-      info: "Ciudad, País",
+      info: "Corrientes Capital, Argentina",
       action: null,
     },
   ];
@@ -200,10 +231,11 @@ const Contact = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3"
+                    disabled={isSubmitting}
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="w-5 h-5 mr-2" />
-                    Enviar mensaje
+                    {isSubmitting ? "Enviando..." : "Enviar mensaje"}
                   </Button>
                 </form>
               </CardContent>
@@ -245,18 +277,6 @@ const Contact = () => {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            <div className="glass-effect rounded-lg border border-white/10 p-6">
-              <h4 className="text-xl font-bold text-white mb-4 flex items-center">
-                <Clock className="w-5 h-5 mr-2 text-indigo-400" />
-                Horarios de atención
-              </h4>
-              <div className="space-y-2 text-gray-300">
-                <p>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
-                <p>Sábados: 10:00 AM - 2:00 PM</p>
-                <p>Domingos: Cerrado</p>
               </div>
             </div>
 

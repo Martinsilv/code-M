@@ -10,53 +10,36 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "María González",
-      company: "Boutique Fashion",
-      text: "Code M transformó completamente mi tienda online. Las ventas aumentaron un 300% en los primeros 3 meses. Su trabajo es excepcional.",
+      company: "polirubro",
+      text: "Me ayudó completamente. Las ventas aumentaron en los primeros 3 meses no tengo dudas de que su trabajo es excepcional.",
       rating: 5,
-      avatar: "Professional businesswoman smiling confidently",
     },
     {
-      name: "Carlos Rodríguez",
-      company: "Restaurante El Sabor",
-      text: "El sitio web que desarrolló para mi restaurante es simplemente perfecto. Elegante, funcional y ha mejorado mucho nuestra presencia digital.",
+      name: "Carlos",
+      company: "Restaurante",
+      text: "El menu digital que desarrolló para mi restaurante es simplemente perfecto. Elegante, funcional y ha mejorado mucho nuestra presencia digital.",
       rating: 5,
-      avatar: "Professional chef in restaurant uniform smiling",
     },
     {
       name: "Ana Martínez",
-      company: "Clínica Dental Sonrisa",
-      text: "Profesionalismo y calidad excepcional. El sistema de citas online ha revolucionado la forma en que atendemos a nuestros pacientes.",
+      company: "Clínica Dental",
+      text: "El sitio web que creó para nuestra clínica es profesional , muy prolijo y facilita a los clientes a encontrar información de nuestros servicios y a contactarse.",
       rating: 5,
-      avatar: "Professional female doctor in white coat smiling",
     },
-    {
-      name: "Luis Fernández",
-      company: "Tech Startup",
-      text: "La landing page que creó para nuestra startup generó más leads en un mes que nuestra página anterior en todo el año. ¡Increíble!",
-      rating: 5,
-      avatar: "Young professional entrepreneur in modern office",
-    },
+
     {
       name: "Patricia Silva",
       company: "Agencia de Viajes",
-      text: "Trabajo impecable y atención al detalle extraordinaria. Nuestros clientes constantemente elogian lo fácil que es navegar por nuestro sitio.",
+      text: "exelente trabajo y a tiempo, necesitabamos con urgencia un sitio que pueda brindar informacion acerca de nustros viajes, y en menos de una semana ya lo tenia terminado, recomendadisimo!!.",
       rating: 5,
-      avatar: "Professional travel agent with world map background",
     },
-    {
-      name: "Roberto Jiménez",
-      company: "Consultoría Legal",
-      text: "Code M entendió perfectamente nuestras necesidades. El sitio web transmite la seriedad y profesionalismo que buscábamos.",
-      rating: 5,
-      avatar: "Professional lawyer in suit with law books background",
-    },
+
     // NUEVOS TESTIMONIOS
     {
       name: "Sofía Ledesma",
-      company: "SofTrends.ar",
-      text: "Confié en Code M para hacer mi tienda online y fue lo mejor que pude hacer. El diseño quedó hermoso y fácil de usar. Desde que lancé la web, las ventas subieron un montón.",
-      rating: 5,
-      avatar: "Young Argentine woman with long hair and stylish outfit",
+      company: "Tienda Online de Ropa",
+      text: "Confié en Code M para hacer mi tienda online y fue lo mejor que pude hacer. El diseño quedó hermoso  y todo funciona de maravilla. al principio tuvimos que hacer unos cambios y eso se demoro un poco la entrega de la web pero muy sastifecho con el trabajo. ¡Muchas gracias!",
+      rating: 4,
     },
     {
       name: "Mariano Toledo",
@@ -66,26 +49,17 @@ const Testimonials = () => {
       avatar: "Argentine male architect with glasses and blueprints",
     },
     {
-      name: "Luciana Moyano",
+      name: "Luciana Rojas",
       company: "Sabores del Alma",
-      text: "No tenía idea de cómo arrancar con una página para vender. Me armaron una tienda con todo listo, y me acompañaron en cada paso. ¡Gente que realmente quiere ayudarte!",
+      text: "No tenía idea de cómo arrancar con una página para vender. Me armaron una tienda con todo listo, y me acompañaron en cada paso, muy buena predisposición.",
       rating: 5,
-      avatar:
-        "Argentine woman entrepreneur with food jars or kitchen background",
     },
-    {
-      name: "Rodrigo Méndez",
-      company: "Punto Legal SRL",
-      text: "Contratamos a Code M para rediseñar nuestra página institucional. Cumplieron los plazos, el diseño quedó impecable, y ahora nuestra imagen online es mucho más profesional.",
-      rating: 5,
-      avatar: "Middle-aged Argentine businessman in suit, smiling",
-    },
+
     {
       name: "Clara Fernández",
       company: "Freelance Marketing",
-      text: "Trabajo con muchos diseñadores web, pero Code M se destacó por la atención al detalle. Armamos una landing page que funcionó espectacular.",
+      text: "Trabajo con muchos diseñadores web, pero acá se destacaron por la atención al detalle. Armamos una landing page que funcionó espectacular.",
       rating: 5,
-      avatar: "Young Argentine woman with laptop in modern workspace",
     },
   ];
 
@@ -137,13 +111,6 @@ const Testimonials = () => {
                   </p>
 
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-indigo-500 flex items-center justify-center">
-                      <img
-                        className="w-full h-full object-cover"
-                        alt={`${testimonial.name} - ${testimonial.company}`}
-                        src="https://images.unsplash.com/photo-1649399045831-40bfde3ef21d"
-                      />
-                    </div>
                     <div>
                       <h4 className="font-semibold text-white">
                         {testimonial.name}

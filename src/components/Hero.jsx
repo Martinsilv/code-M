@@ -113,7 +113,7 @@ const Hero = () => {
                 to={"45"}
                 separator=","
                 direction="up"
-                duration={2}
+                duration={1}
                 className="count-up-text text-2xl font-semibold text-white"
               />
               <div className="text-sm text-gray-400">Proyectos completados</div>
@@ -127,7 +127,7 @@ const Hero = () => {
                   to={"100"}
                   separator=","
                   direction="up"
-                  duration={2}
+                  duration={1}
                   className="count-up-text text-2xl font-bold text-white"
                 />
               </div>
@@ -141,7 +141,7 @@ const Hero = () => {
                   to={"24"}
                   separator=","
                   direction="up"
-                  duration={2}
+                  duration={1}
                   className="count-up-text text-2xl font-bold text-white"
                 />
                 /
@@ -150,7 +150,7 @@ const Hero = () => {
                   to={"7"}
                   separator=","
                   direction="up"
-                  duration={4}
+                  duration={1}
                   className="count-up-text text-2xl font-bold text-white"
                 />
               </div>

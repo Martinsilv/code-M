@@ -14,11 +14,21 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <Facebook size={20} />, href: "#", label: "Facebook" },
-    { icon: <Twitter size={20} />, href: "#", label: "Twitter" },
-    { icon: <Instagram size={20} />, href: "#", label: "Instagram" },
-    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <Github size={20} />, href: "#", label: "GitHub" },
+    {
+      icon: <Instagram size={20} />,
+      href: "http://instagram.com/martinsilva_10/",
+      label: "Instagram",
+    },
+    {
+      icon: <Linkedin size={20} />,
+      href: "https://www.linkedin.com/in/martin-silva-837762243",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Github size={20} />,
+      href: "https://github.com/Martinsilv",
+      label: "GitHub",
+    },
   ];
 
   return (

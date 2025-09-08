@@ -43,6 +43,9 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      // Inicializar EmailJS (hazlo solo una vez, preferiblemente en tu main.jsx o App.jsx)
+      emailjs.init("9kQ-UbE1ydNBQ05nu"); // Reemplaza con tu Public Key
+
       // Configurar EmailJS con tus credenciales
       const result = await emailjs.send(
         "service_lbji7re", // Reemplaza con tu Service ID
@@ -50,13 +53,14 @@ const Contact = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
+          phone: formData.phone || "No proporcionado",
+          service: formData.service || "No especificado",
           message: formData.message,
           to_name: "Code M", // Tu nombre o el de tu empresa
-        },
-        "9kQ-UbE1ydNBQ05nu" // Reemplaza con tu Public Key
+        }
       );
+
+      console.log("Email enviado exitosamente:", result);
 
       toast({
         title: "¡Mensaje enviado con éxito! ✨",
@@ -72,11 +76,27 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
-      console.error("Error al enviar el email:", error);
+      console.error("Error detallado:", error);
+
+      let errorMessage =
+        "Hubo un problema al enviar tu mensaje. Por favor intenta nuevamente.";
+
+      // Mensajes de error más específicos
+      if (error.status === 400) {
+        errorMessage =
+          "Error de configuración. Por favor verifica los datos del formulario.";
+      } else if (error.status === 401) {
+        errorMessage =
+          "Error de autenticación. Verifica tu configuración de EmailJS.";
+      } else if (error.status === 402) {
+        errorMessage = "Límite de emails alcanzado. Contacta al administrador.";
+      } else if (error.text) {
+        errorMessage = `Error: ${error.text}`;
+      }
+
       toast({
         title: "Error al enviar el mensaje",
-        description:
-          "Hubo un problema al enviar tu mensaje. Por favor intenta nuevamente.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -88,8 +108,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      info: "martinsilva510@gmil.com",
-      action: "mailto:hola@codem.dev",
+      info: "martinsilva510@gmail.com",
+      action: "mailto:martinsilva510@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,

@@ -1,19 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Code,
-  Menu,
-  X,
-  Home,
-  User,
-  Settings,
-  Mail,
-  Phone,
-  User2Icon,
-  Workflow,
-  Hammer,
-} from "lucide-react";
+import { Menu, X, Home, Settings, Mail, Hammer, User } from "lucide-react";
 import imgLogo from "../components/assets/logo2.png";
+
 export const DropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,7 +14,7 @@ export const DropdownMenu = () => {
     { icon: Home, label: "Inicio", href: "#home" },
     { icon: Settings, label: "Servicios", href: "#services" },
     { icon: Hammer, label: "Proyectos", href: "#projects" },
-    { icon: User2Icon, label: "Testimonios", href: "#testimonials" },
+    { icon: User, label: "Testimonios", href: "#testimonials" },
     { icon: Mail, label: "Contacto", href: "#contact" },
   ];
 
@@ -61,20 +50,55 @@ export const DropdownMenu = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.9 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              initial={{ opacity: 0, x: -10, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -10, scale: 0.95 }}
+              transition={{
+                duration: 0.2,
+                ease: "easeOut",
+              }}
               className="absolute top-full left-0 w-full min-w-[280px] sm:min-w-[320px] bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl z-50"
             >
-              <div className="p-2">
-                {menuItems.map((item, index) => (
+              <motion.div
+                className="p-2"
+                initial="closed"
+                animate="open"
+                variants={{
+                  open: {
+                    transition: {
+                      staggerChildren: 0.05,
+                      delayChildren: 0.1,
+                    },
+                  },
+                  closed: {
+                    transition: {
+                      staggerChildren: 0.02,
+                      staggerDirection: -1,
+                    },
+                  },
+                }}
+              >
+                {menuItems.map((item) => (
                   <motion.a
                     key={item.label}
                     href={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.3 }}
+                    variants={{
+                      open: {
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                          duration: 0.2,
+                          ease: "easeOut",
+                        },
+                      },
+                      closed: {
+                        opacity: 0,
+                        x: -10,
+                        transition: {
+                          duration: 0.15,
+                        },
+                      },
+                    }}
                     className="flex items-center gap-3 px-4 py-3 text-white hover:bg-white/20 rounded-xl transition-all duration-200 group"
                     onClick={(e) => {
                       e.preventDefault();
@@ -97,7 +121,7 @@ export const DropdownMenu = () => {
                     </span>
                   </motion.a>
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

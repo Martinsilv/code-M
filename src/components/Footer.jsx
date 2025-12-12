@@ -9,14 +9,14 @@ import {
   Linkedin,
   Github,
 } from "lucide-react";
-
+import imgLogo from "../components/assets/logo.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
       icon: <Instagram size={20} />,
-      href: "http://instagram.com/martinsilva_10/",
+      href: "https://www.instagram.com/clyver.studio/",
       label: "Instagram",
     },
     {
@@ -45,10 +45,16 @@ const Footer = () => {
               className="mb-6"
             >
               <div className="flex items-center gap-2 mb-4">
-                <div className="bg-indigo-600 p-2 rounded-lg">
-                  <Code className="w-6 h-6 text-white" />
+                <div>
+                  <img
+                    src={imgLogo}
+                    alt="Logo"
+                    className="w-8 h-8 hover:scale-125 transition-transform duration-300"
+                  />
                 </div>
-                <span className="text-2xl font-bold text-white">Code M</span>
+                <span className="text-2xl font-bold text-white">
+                  Clyver Studio
+                </span>
               </div>
               <p className="text-gray-400 max-w-md leading-relaxed">
                 Transformando ideas en experiencias digitales extraordinarias.
@@ -161,7 +167,7 @@ const Footer = () => {
             <span>Desarrollado con</span>
             <Heart className="w-4 h-4 mx-2 text-red-500 animate-pulse" />
             <span>por</span>
-            <span className="ml-1 font-semibold text-white">Code M</span>
+            <span className="ml-1 font-semibold text-white">Clyver Studio</span>
             <span className="ml-2">© {currentYear}</span>
           </div>
         </motion.div>

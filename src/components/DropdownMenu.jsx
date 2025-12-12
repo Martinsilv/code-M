@@ -1,7 +1,19 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code, Menu, X, Home, User, Settings, Mail, Phone } from "lucide-react";
-
+import {
+  Code,
+  Menu,
+  X,
+  Home,
+  User,
+  Settings,
+  Mail,
+  Phone,
+  User2Icon,
+  Workflow,
+  Hammer,
+} from "lucide-react";
+import imgLogo from "../components/assets/logo.png";
 export const DropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,10 +23,10 @@ export const DropdownMenu = () => {
 
   const menuItems = [
     { icon: Home, label: "Inicio", href: "#home" },
-    { icon: User, label: "Sobre Nosotros", href: "#about" },
     { icon: Settings, label: "Servicios", href: "#services" },
+    { icon: Hammer, label: "Proyectos", href: "#projects" },
+    { icon: User2Icon, label: "Testimonios", href: "#testimonials" },
     { icon: Mail, label: "Contacto", href: "#contact" },
-    { icon: Phone, label: "Testimonios", href: "#testimonials" },
   ];
 
   return (
@@ -31,8 +43,8 @@ export const DropdownMenu = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Code className="text-indigo-400" size={20} />
-          <span className="font-semibold text-white">Code M</span>
+          <img src={imgLogo} alt="Logo" className="w-5 h-5" />
+          <span className="font-semibold text-white">Clyver Studio</span>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.3 }}

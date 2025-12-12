@@ -86,7 +86,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portafolio" className="py-20 hero-bg">
+    <section id="projects" className="py-20 hero-bg">
       <div className="container mx-auto px-4">
         <div ref={sectionRef} className="scroll-reveal text-center mb-16">
           <motion.div

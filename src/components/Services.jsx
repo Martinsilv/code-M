@@ -27,7 +27,7 @@ const Services = () => {
       icon: <Globe className="w-12 h-12 text-indigo-400" />,
       title: "Landing Pages Efectivas",
       description:
-        "Páginas de aterrizaje optimizadas para conversión que capturan leads y generan ventas. Diseño persuasivo con llamadas a la acción estratégicas.",
+        "Páginas bien optimizadas para aumentar tus ventas, conseguir más contactos, mejorar tu presencia online. Diseño persuasivo con llamadas a la acción estratégicas.",
       features: [
         "Diseño responsive",
         "Optimización SEO",
@@ -62,11 +62,11 @@ const Services = () => {
   ];
 
   const scrollToContact = () => {
-    document.getElementById("contacto").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="servicios" className="py-20 hero-bg">
+    <section id="services" className="py-20 hero-bg">
       <div className="container mx-auto px-4">
         <div ref={sectionRef} className="scroll-reveal text-center mb-16">
           <motion.div

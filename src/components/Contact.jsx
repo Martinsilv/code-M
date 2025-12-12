@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from "lucide-react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const sectionRef = useScrollReveal();
@@ -126,7 +126,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 hero-bg">
+    <section id="contact" className="py-20 hero-bg">
       <div className="container mx-auto px-4">
         <div ref={sectionRef} className="scroll-reveal text-center mb-16">
           <motion.div
@@ -303,7 +303,7 @@ const Contact = () => {
             <div className="glass-effect rounded-lg border border-white/10 p-6">
               <h4 className="text-xl font-bold text-white mb-4 flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2 text-green-400" />
-                ¿Por qué elegir Code M?
+                ¿Por qué elegir Clyver?
               </h4>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center">

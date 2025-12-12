@@ -14,12 +14,12 @@ function App() {
     <>
       <Helmet>
         <title>
-          Code M - Desarrollo Web Profesional | Landing Pages, Sitios Web y
-          E-commerce
+          Clyver Studio - Desarrollo Web Profesional | Landing Pages, Sitios Web
+          y E-commerce
         </title>
         <meta
           name="description"
-          content="Desarrollo web profesional con Code M. Creamos landing pages efectivas, sitios web institucionales y tiendas e-commerce modernas que impulsan tu presencia digital y hacen crecer tu negocio."
+          content="Desarrollo web profesional con Clyver Studio. Creamos landing pages efectivas, sitios web institucionales y tiendas e-commerce modernas que impulsan tu presencia digital y hacen crecer tu negocio."
         />
         <meta
           name="keywords"

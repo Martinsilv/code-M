@@ -38,7 +38,7 @@ const Testimonials = () => {
     {
       name: "Sofía Ledesma",
       company: "Tienda Online de Ropa",
-      text: "Confié en Code M para hacer mi tienda online y fue lo mejor que pude hacer. El diseño quedó hermoso  y todo funciona de maravilla. al principio tuvimos que hacer unos cambios y eso se demoro un poco la entrega de la web pero muy sastifecho con el trabajo. ¡Muchas gracias!",
+      text: "Confié en Clyver para hacer mi tienda online y fue lo mejor que pude hacer. El diseño quedó hermoso  y todo funciona de maravilla. al principio tuvimos que hacer unos cambios y eso se demoro un poco la entrega de la web pero muy sastifecho con el trabajo. ¡Muchas gracias!",
       rating: 4,
     },
     {
@@ -64,7 +64,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonios" className="py-20 hero-bg">
+    <section id="testimonials" className="py-20 hero-bg">
       <div className="container mx-auto px-4">
         <div ref={sectionRef} className="scroll-reveal text-center mb-16">
           <motion.div
@@ -78,7 +78,7 @@ const Testimonials = () => {
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               La satisfacción de mis clientes es mi mayor logro. Descubre por
-              qué confían en Code M para sus proyectos de desarrollo web.
+              qué confían en Clyver Studio para sus proyectos de desarrollo web.
             </p>
           </motion.div>
         </div>
@@ -139,11 +139,11 @@ const Testimonials = () => {
             </h3>
             <p className="text-gray-300 mb-6">
               Únete a más de 50 clientes satisfechos que han transformado su
-              presencia digital con Code M
+              presencia digital con Clyver Studio
             </p>
             <div className="flex justify-center items-center gap-8 text-gray-400">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">98%</div>
+                <div className="text-3xl font-bold text-white">99%</div>
                 <div className="text-sm">Satisfacción del cliente</div>
               </div>
               <div className="w-px h-12 bg-white/20"></div>

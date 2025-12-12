@@ -20,12 +20,15 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
   const scrollToContact = () => {
-    document.getElementById("contacto").scrollIntoView({
+    document.getElementById("contact").scrollIntoView({
       behavior: "smooth",
     });
   };
   return (
-    <section className="hero-bg min-h-screen flex items-center justify-center relative ">
+    <section
+      id="home"
+      className="hero-bg min-h-screen flex items-center justify-center relative "
+    >
       <div className="container mx-auto  px-10 text-center relative z-10">
         <motion.div className="max-w-4xl mx-auto">
           <div className="mt-8">
@@ -83,7 +86,7 @@ const Hero = () => {
               size="lg"
               className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-full backdrop-blur-sm"
               onClick={() =>
-                document.getElementById("servicios").scrollIntoView({
+                document.getElementById("services").scrollIntoView({
                   behavior: "smooth",
                 })
               }
@@ -110,7 +113,7 @@ const Hero = () => {
               +
               <CountUp
                 from={0}
-                to={"45"}
+                to={"50"}
                 separator=","
                 direction="up"
                 duration={1}
@@ -141,7 +144,7 @@ const Hero = () => {
                   to={"24"}
                   separator=","
                   direction="up"
-                  duration={1}
+                  duration={0.5}
                   className="count-up-text text-2xl font-bold text-white"
                 />
                 /
@@ -150,7 +153,7 @@ const Hero = () => {
                   to={"7"}
                   separator=","
                   direction="up"
-                  duration={1}
+                  duration={0.5}
                   className="count-up-text text-2xl font-bold text-white"
                 />
               </div>

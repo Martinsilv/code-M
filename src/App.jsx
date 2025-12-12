@@ -27,7 +27,7 @@ function App() {
         />
         <meta
           property="og:title"
-          content="Code M - Desarrollo Web Profesional"
+          content="Clyver Studio - Desarrollo Web Profesional"
         />
         <meta
           property="og:description"

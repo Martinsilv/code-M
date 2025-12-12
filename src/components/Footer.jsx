@@ -9,7 +9,7 @@ import {
   Linkedin,
   Github,
 } from "lucide-react";
-import imgLogo from "../components/assets/logo.png";
+import imgLogo from "../components/assets/logo2.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -49,7 +49,7 @@ const Footer = () => {
                   <img
                     src={imgLogo}
                     alt="Logo"
-                    className="w-8 h-8 hover:scale-125 transition-transform duration-300"
+                    className="w-10 h-10 hover:scale-125 transition-transform duration-300"
                   />
                 </div>
                 <span className="text-2xl font-bold text-white">

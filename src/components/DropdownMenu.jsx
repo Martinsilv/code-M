@@ -13,7 +13,7 @@ import {
   Workflow,
   Hammer,
 } from "lucide-react";
-import imgLogo from "../components/assets/logo.png";
+import imgLogo from "../components/assets/logo2.png";
 export const DropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,7 +43,7 @@ export const DropdownMenu = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src={imgLogo} alt="Logo" className="w-5 h-5" />
+          <img src={imgLogo} alt="Logo" className="w-7 h-7" />
           <span className="font-semibold text-white">Clyver Studio</span>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
